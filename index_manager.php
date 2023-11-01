@@ -7,8 +7,8 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] != "manager") {
 }
 
 
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +17,14 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] != "manager") {
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
-<body>
+	<body>
 		<div class="container mt-5 w-50">
 			<div class="card p-3" style="width: 50rem;">
 			    <h2 class="text-success">User panel</h2>
 				<h2 class="text-success">Welcome! <?php echo $_SESSION["username"]  ?></h2>
-				<h2 class="text-success">Role: <?php echo $_SESSION["role"];  ?></h2>
-
-				<h2 class="text-info">List all types of  users</h2>
+				<h2 class="text-success">Role: <?php echo $_SESSION["role"];  ?></h1>
 				
-
+				<h2 class="text-info">List all types of  users</h1>
 
 				<table class="table">
 						<thead>

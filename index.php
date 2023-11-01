@@ -16,7 +16,7 @@ require('functions.php')
 		<!-- Bootstrap link always comes before other CSS links -->
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="styles.css" />
-		<title>MyBands</title>
+		<title>Admin</title>
 	</head>
 	<body>
 		<div id="wrapper" class="container">

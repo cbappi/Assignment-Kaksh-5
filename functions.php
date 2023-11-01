@@ -4,7 +4,7 @@ function input($name, $placeholder, $value=null) {
 	if($value == null && isset($_SESSION['POST'][$name])) {
 		$value = $_SESSION['POST'][$name];
 		
-		// Remove from session data
+	
 		unset($_SESSION['POST'][$name]);
 	
 		if($value == '') {
@@ -26,10 +26,9 @@ function input($name, $placeholder, $value=null) {
 function dropdown($name, $options) {
 	$select = "<select name=\"$name\">";
 	
-	// Add option elements to select element
+
 	foreach($options as $value => $text) {
-		// If there is session form data for $name, AND its value
-		// is the same as the current array element, select it
+		
 		if(isset($_SESSION['POST'][$name]) && $_SESSION['FORM'][$name] == $value) {
 			unset($_SESSION['FIRM'][$name]);
 			$selected = 'selected="selected';
@@ -46,10 +45,9 @@ function dropdown($name, $options) {
 function radio($name, $options) {
 	$radio = '';
 	
-	// Loop over options
+
 	foreach($options as $value => $text) {
-		// If there is session form data for $name, AND its value is the same as the current array
-		// element, select it
+		
 		if(isset($_SESSION['POST'][$name]) && $_SESSION['POST'][$name] == $value) {
 			unset($_SESSION['POST'][$name]);
 			$checked = 'checked="checked"';

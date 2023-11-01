@@ -3,8 +3,8 @@
 
 if(isset($_GET['p'])) {
 	$p = $_GET['p'];
-} else {
+} else{
 	$p = 'list_info';
-}
+} 
 
 include("views/$p.php");

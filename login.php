@@ -1,12 +1,14 @@
 <?php
 session_start([
-    'cookie_lifetime' => 5,
+    'cookie_lifetime' => 50,
 ]);
+
 
 
 
 $email = $_POST["email"] ?? "";
 $password = $_POST["password"] ?? "";
+
 
 
 $fp = fopen("./data/bb.csv", "r");
@@ -21,6 +23,8 @@ while ($line = fgets($fp)) {
     $values = explode(",", $line);  // role, email, password, firstname, lastname, age
 
     array_push($roles, trim($values[0]));
+
+ 
     array_push($emails, trim($values[1]));
     array_push($passwords, trim($values[2]));
     array_push($usernames, trim($values[3]));
@@ -29,9 +33,11 @@ while ($line = fgets($fp)) {
 
 fclose($fp);
 
+
+
 for ($i = 0; $i < count($roles); $i++) {
 
-
+  
 
     if ($email == $emails[$i] && $password == $passwords[$i]){
         $_SESSION["role"] = $roles[$i];
@@ -49,18 +55,20 @@ for ($i = 0; $i < count($roles); $i++) {
         else{
             header("Location: index.php");
         }
+     
+
+    
        
        
     }
     else {
      
-              echo "";}
-          
+              echo "";
+            }
      
-    
     }
 
-
+   
 
 
 
@@ -104,11 +112,13 @@ for ($i = 0; $i < count($roles); $i++) {
                 
              </div>
             </div>
+
+          
             
 
 
 
-        <button type="submit" class="btn btn-primary mt-3">Login</button>
+        <button type="submit" name = "login" class="btn btn-primary mt-3">Login</button>
         </form>
 
         <p>Don't have an account? <a href="signup.php">Sign up</a></p>

@@ -15,6 +15,8 @@ if($_SERVER['REQUEST_METHOD']=="post"){
     if(empty($_POST['password'])){
         $userPassword = "Enter password";
     }
+
+   
 }
 
 
@@ -25,7 +27,7 @@ $errorMessage = "";
 
 if ($email != "" && $password != "") {  
     $fp = fopen('./data/bb.csv', "a");
-    
+ 
     fwrite($fp, "\n{$role}, {$email}, {$password}, {$username}");
     fclose($fp);
 
